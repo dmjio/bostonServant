@@ -1,0 +1,100 @@
+{
+    "swagger": "2.0",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "info": {
+        "contact": {
+            "email": "julian@gmail.com",
+            "url": "https://haskell-servant.github.io/",
+            "name": "Julian"
+        },
+        "version": "1.0",
+        "title": "Sample API",
+        "license": {
+            "url": "https://opensource.org/licenses/MIT",
+            "name": "MIT"
+        },
+        "description": "Sample generated Swagger API"
+    },
+    "definitions": {
+        "Int": {
+            "example": 1,
+            "required": [
+                "int"
+            ],
+            "type": "object",
+            "description": "Int Model",
+            "properties": {
+                "int": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "paths": {
+        "/anint": {
+            "post": {
+                "summary": "Adds an Int ",
+                "consumes": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "headers": {},
+                        "description": "OK"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Int"
+                        },
+                        "in": "body",
+                        "name": "Int",
+                        "description": "Int Model"
+                    }
+                ],
+                "operationId": "addAnInt",
+                "description": "POSTs an Int",
+                "tags": [
+                    "int"
+                ]
+            },
+            "get": {
+                "summary": "Retrieve an Int",
+                "consumes": [],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/Int"
+                        },
+                        "headers": {},
+                        "description": "OK"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "operationId": "getAnInt",
+                "description": "Gets an Int",
+                "tags": [
+                    "int"
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "int",
+            "description": "API for managing integers"
+        }
+    ]
+}
